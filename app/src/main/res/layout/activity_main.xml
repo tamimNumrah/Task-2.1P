@@ -20,6 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
+            android:checked="true"
             android:text="@string/radio_1" />
 
         <RadioButton
@@ -45,11 +46,12 @@
         android:text="Source Unit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <Spinner
         android:id="@+id/sourceSpinner"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="200dp"
         android:layout_marginEnd="20dp"
         android:spinnerMode="dropdown"
@@ -57,7 +59,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <TextView
-        android:id="@+id/DesitnationTitleTextView"
+        android:id="@+id/DestinationTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -65,11 +67,12 @@
         android:text="Destination Unit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <Spinner
         android:id="@+id/destinationSpinner"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="300dp"
         android:layout_marginEnd="20dp"
         android:spinnerMode="dropdown"
@@ -81,33 +84,37 @@
         android:id="@+id/sourceNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
         android:layout_marginTop="5dp"
         android:ems="10"
+        android:hint="Please add valid number"
         android:inputType="numberDecimal"
-        app:layout_constraintTop_toBottomOf="@+id/sourceSpinner"
-        tools:layout_editor_absoluteX="18dp" />
-
-    <EditText
-        android:id="@+id/destinationNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintTop_toBottomOf="@+id/destinationSpinner"
-        tools:layout_editor_absoluteX="20dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sourceSpinner" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/convertButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="158dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="150dp"
         android:layout_marginEnd="159dp"
+        android:onClick="onConvertButtonClicked"
         android:text="Convert"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/destinationNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/destinationSpinner" />
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/destinationSpinner" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
